@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: db
+  labels:
+    name: postgres-service
+    app: demo-voting-app
+spec:
+  type: clusterIP
+  selector:
+    name: postgres-pod
+    app: demo-voting-app
+  ports: # a nodePort is not needed becasue this is for an internal service
+      - port: 5432
+        targetPort: 5432
