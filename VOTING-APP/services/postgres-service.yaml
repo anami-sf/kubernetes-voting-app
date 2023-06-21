@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: v1
 kind: Service
 metadata:
   name: db
@@ -6,7 +6,7 @@ metadata:
     name: postgres-service
     app: demo-voting-app
 spec:
-  type: clusterIP
+  type: ClusterIP
   selector:
     name: postgres-pod
     app: demo-voting-app
